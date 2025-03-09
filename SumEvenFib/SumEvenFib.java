@@ -20,7 +20,7 @@ public class SumEvenFib {
             fibNum = sef.fib(i);
         }
         System.out.println("By considering the terms in the Fibonacci sequence whose values \n"
-                            + "do not exceed four million, find the sum of the even-valued terms.");
+                         + "do not exceed four million, find the sum of the even-valued terms.");
         System.out.println("Answer: " + sum);
     }
 
