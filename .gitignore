@@ -2,3 +2,13 @@
 !*.java
 !*.txt
 !*/
+
+!gradlew
+!gradlew.bat
+!gradle-wrapper.properties
+!libs.versions.toml
+!*.gradle
+
+!*.jar
+!.gitignore
+!.gitattributes
