@@ -12,7 +12,9 @@ plugins {
 }
 
 javafx {
-    version = "23.0.2"
+    //For Mac Error
+    //WARNING: Timeout while waiting for app reactivation
+    version = "21.0.1"
     modules = [ 'javafx.controls' ]
 }
 
@@ -34,7 +36,8 @@ dependencies {
 // Apply a specific Java toolchain to ease working on different environments.
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
+        //Oldest java version compatible
+        languageVersion = JavaLanguageVersion.of(17)
     }
 }
 
