@@ -5,6 +5,7 @@
 
 !gradlew
 !gradlew.bat
+!gradle.properties
 !gradle-wrapper.properties
 !libs.versions.toml
 !*.gradle
