@@ -3,21 +3,22 @@
  */
 package restapi;
 
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 public class App
 {
     public static void main(String[] args) throws Exception
     {
-        HttpClient client = HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(new URI("https://randomuser.me/api/?format=pretty"))
-                .build();
-        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        RandomUser user = new RandomUser();
+        String response = user.request();
+        System.out.println(response);
+        JSONObject obj = new JSONObject(response);
 
-        System.out.println(response.body());
+        JSONArray result = obj.getJSONArray("results");
+
+        JSONObject person = result.getJSONObject(0);
+        String gender = person.getString("gender");
+        System.out.println("Gender: " + gender);
     }
 }
