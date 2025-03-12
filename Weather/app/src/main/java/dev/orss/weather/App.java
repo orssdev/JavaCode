@@ -3,12 +3,26 @@
  */
 package dev.orss.weather;
 
-public class App {
-    public String getGreeting() {
-        return "Hello World!";
+import javafx.application.Application;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+
+public class App extends Application
+{
+    public void start(Stage stage)
+    {
+        stage.setTitle("Weather");
+        Group root = new Group();
+        Scene scene = new Scene(root, 600, 400, Color.BLACK);
+
+        stage.setScene(scene);
+        stage.show();
     }
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+    public static void main(String[] args) 
+    {
+        launch(args); 
     }
 }
