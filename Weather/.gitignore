@@ -6,3 +6,4 @@ build
 
 !*.png
 !*.fxml
+!.env_example
