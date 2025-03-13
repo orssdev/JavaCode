@@ -28,5 +28,9 @@ public class App extends Application
     public static void main(String[] args) 
     {
         launch(args); 
+
+        Weather w = new Weather();
+        w.setLocation("Spruce Pine");
+        System.out.println(w.getURl());
     }
 }
