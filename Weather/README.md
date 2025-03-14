@@ -1,6 +1,6 @@
 # Weather
 
-![App](./app.png)
+<img src="./app.png" width="500" />
 
 ## .env
 
