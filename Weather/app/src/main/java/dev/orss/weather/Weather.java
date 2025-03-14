@@ -1,5 +1,9 @@
 package dev.orss.weather;
 
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import io.github.cdimascio.dotenv.Dotenv;
 
 public class Weather 
@@ -21,7 +25,8 @@ public class Weather
     {
         if(location != null)
         {
-            this.location = location;
+
+            this.location = location.replace(' ', '+');
         }
         else
         {
@@ -32,5 +37,17 @@ public class Weather
     public String getURl()
     {
         return String.format(this.url, this.location, this.apikey);
+    }
+
+    public String request() throws Exception
+    {
+        HttpClient client = HttpClient.newHttpClient();
+
+        HttpRequest request = HttpRequest.newBuilder()
+            .uri(new URI(getURl()))
+            .build();
+            
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        return response.body();
     }
 }

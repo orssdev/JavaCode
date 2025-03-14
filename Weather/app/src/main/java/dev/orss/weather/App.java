@@ -25,12 +25,8 @@ public class App extends Application
         stage.show();
     }
 
-    public static void main(String[] args) 
+    public static void main(String[] args) throws Exception
     {
-        launch(args); 
-
-        Weather w = new Weather();
-        w.setLocation("Spruce Pine");
-        System.out.println(w.getURl());
+        launch(args);
     }
 }
